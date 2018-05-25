@@ -6,8 +6,9 @@ As we peel back the layers, however, we find that the topic of code review is mu
 
 Attendees will gain deeper insight into some of the arguments for and against systemic, peer code review, as well as pick up some useful tools to make code review a natural part of their teams' workflow.
 
-**[View slides](http://stevegrunwell.github.io/code-review-for-me-and-you)**
+:sparkles: **[View slides](http://stevegrunwell.github.io/code-review-for-me-and-you)** :sparkles:
 
 ## Presentation History
 
+* [INN Labs Office Hours](https://stevegrunwell.com/speaking/inn-labs-office-hours-may-25-2018/) - May 25, 2018
 * [WordCamp Dayton 2018](https://2018.dayton.wordcamp.org/) - May 19, 2018
