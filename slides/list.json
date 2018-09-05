@@ -48,8 +48,6 @@
         "atomic-commits2.md",
         "atomic-prs.md",
         "blocked-tag.md",
-        "work-in-progress.md",
-        "coding-standards.md",
         "editorconfig.md",
         "eslint.md",
         "php-codesniffer.md",
@@ -60,9 +58,6 @@
         "static-code-analysis.md",
         "gitignore.md",
         "git-hooks.md",
-        "wp-enforcer.md",
-        "inline-documentation.md",
-        "audit-whitelist.md"
     ],
     "thank-you.md"
 ]
