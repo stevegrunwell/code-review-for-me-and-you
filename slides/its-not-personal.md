@@ -2,7 +2,7 @@
 
 > It's not personal,
 > it's strictly business.
-<!-- .element: style="text-shadow: 0 0 8px #000;" -->
+<!-- .element: style="color: #fff; text-shadow: 0 0 8px #000;" -->
 
 Note:
 
