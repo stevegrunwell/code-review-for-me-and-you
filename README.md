@@ -10,5 +10,6 @@ Attendees will gain deeper insight into some of the arguments for and against sy
 
 ## Presentation History
 
-* [INN Labs Office Hours](https://stevegrunwell.com/speaking/inn-labs-office-hours-may-25-2018/) - May 25, 2018 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/inn-office-hours/slides.pdf))
-* [WordCamp Dayton 2018](https://2018.dayton.wordcamp.org/) - May 19, 2018 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/wordcamp-dayton-2018/slides.pdf))
+* [Cascadia PHP](https://www.cascadiaphp.com/) — September 15, 2018 ([Joind.in](https://joind.in/talk/9f157))
+* [INN Labs Office Hours](https://stevegrunwell.com/speaking/inn-labs-office-hours-may-25-2018/) — May 25, 2018 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/inn-office-hours/slides.pdf))
+* [WordCamp Dayton 2018](https://2018.dayton.wordcamp.org/) — May 19, 2018 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/wordcamp-dayton-2018/slides.pdf))
