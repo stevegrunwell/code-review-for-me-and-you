@@ -24,18 +24,6 @@
         "priorities.md"
     ],
     [
-        "facilitating.md",
-        "github-prs.md",
-        "github-prs-push.md",
-        "github-prs-open.md",
-        "github-prs-open2.md",
-        "github-prs-ci.md",
-        "github-prs-open2b.md",
-        "github-prs-review.md",
-        "github-prs-review2.md",
-        "other-code-review-tools.md"
-    ],
-    [
         "providing-feedback.md",
         "be-objective.md",
         "be-objective2.md",
@@ -51,13 +39,9 @@
         "editorconfig.md",
         "eslint.md",
         "php-codesniffer.md",
-        "php-codesniffer2.md",
-        "php-codesniffer3.md",
-        "php-codesniffer4.md",
         "php-cs-fixer.md",
         "static-code-analysis.md",
-        "gitignore.md",
-        "git-hooks.md",
+        "gitignore.md"
     ],
     "thank-you.md"
 ]
