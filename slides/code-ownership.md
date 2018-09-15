@@ -1,4 +1,4 @@
-<!-- .slide: data-background-image="resources/you-dont-own-me.gif" data-background-position="center center" data-background-size="contain" -->
+<!-- .slide: data-background-image="resources/you-dont-own-me.gif" data-background-position="center center" data-background-size="contain" data-background-color="#000" -->
 
 Note:
 
