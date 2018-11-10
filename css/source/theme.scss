@@ -52,18 +52,22 @@ section.has-dark-background {
     }
 
     footer {
-      position: fixed;
-      top: auto;
-      bottom: 1em;
-      left: 1em;
-      padding: .5em;
-      z-index: 100;
-      font-size: 0.5em;
-      background: rgba(255, 255, 255, 0.7);
+        position: fixed;
+        top: auto;
+        bottom: 1em;
+        left: 1em;
+        padding: .5em;
+        z-index: 100;
+        font-size: 0.5em;
+        background: rgba(255, 255, 255, 0.7);
 
-      a {
-        color: darken($linkColor, 15%);
-      }
+        .intro-slide & {
+            display: none;
+        }
+
+        a {
+            color: darken($linkColor, 15%);
+        }
     }
 }
 

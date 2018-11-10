@@ -298,6 +298,8 @@ body {
   z-index: 100;
   font-size: 0.5em;
   background: rgba(255, 255, 255, 0.7); }
+  .intro-slide .reveal footer {
+    display: none; }
   .reveal footer a {
     color: #396b93; }
 
