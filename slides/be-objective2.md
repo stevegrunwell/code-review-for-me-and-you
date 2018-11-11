@@ -10,4 +10,4 @@
 
 Note:
 
-* Instead of telling taking a "I know better than you" standpoint, make a statement and ask a leading question.
+* Instead of taking a "I know better than you" standpoint, make a statement and ask a leading question.

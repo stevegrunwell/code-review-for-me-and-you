@@ -8,5 +8,5 @@
 
 Note:
 
-* A very popular way to handle PRs, either on GitHub or GitHub Enterprise
+* A very popular way to handle code reviews is via Pull Requests on a tool like GitHub
 * General workflow: make change in branch, open PR, maybe run CI, reviewer(s) leave feedback, then merge

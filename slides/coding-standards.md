@@ -7,9 +7,7 @@
 
 Note:
 
+* Helpful to determine standards at the beginning of a project
 * Consistent standards == fewer merge conflicts and a more readable codebase
-* Pick a standard for each project and try to stick to it
-    - WP = WordPress coding standards
-    - Composer package = PHP Standard Recommendation (PSR) standards
-* What's important? Security? Performance?
+* Determine what's a priority in reviews. Security? Performance?
 * Are reviews always required, or only for larger changes?

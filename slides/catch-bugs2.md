@@ -2,7 +2,7 @@
 
 * A second set of eyes on the code
 * <!-- .element: class="fragment" --> Catches the most egregious errors
-* <!-- .element: class="fragment" --> Easiest to automate away
+    * <!-- .element: class="fragment" --> Easiest to automate away
 
 Note:
 
