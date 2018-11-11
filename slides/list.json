@@ -58,7 +58,6 @@
         "php-codesniffer2.md",
         "php-codesniffer3.md",
         "php-codesniffer4.md",
-        "php-cs-fixer.md",
         "static-code-analysis.md",
         "gitignore.md",
         "git-hooks.md",
