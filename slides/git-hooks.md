@@ -8,4 +8,4 @@ Note:
 
 * Scripts that can be executed throughout Git lifecycle
 * Not stored in the repo by default, but can easily be distributed
-* Things like automatically checking coding standards, updating dependencies on git pull, or run scripts ahead of a git push.
+* Things like automatically running PHP_Codesniffer pre-commit, updating dependencies on git pull, or running tests ahead of a git push

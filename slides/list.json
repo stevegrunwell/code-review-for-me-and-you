@@ -1,4 +1,5 @@
 [
+    "sponsors.md",
     "index.md",
     [
         "about-me.md",
@@ -18,10 +19,23 @@
         "developer-growth.md",
         "who-reviews-code.md",
         "against-code-review.md",
+        "goal-of-code-review.md",
         "building-a-culture-of-code-review.md",
         "its-not-personal.md",
         "code-ownership.md",
         "priorities.md"
+    ],
+    [
+        "facilitating.md",
+        "github-prs.md",
+        "github-prs-push.md",
+        "github-prs-open.md",
+        "github-prs-open2.md",
+        "github-prs-ci.md",
+        "github-prs-open2b.md",
+        "github-prs-review.md",
+        "github-prs-review2.md",
+        "other-code-review-tools.md"
     ],
     [
         "providing-feedback.md",
@@ -36,12 +50,19 @@
         "atomic-commits2.md",
         "atomic-prs.md",
         "blocked-tag.md",
+        "work-in-progress.md",
+        "coding-standards.md",
         "editorconfig.md",
         "eslint.md",
         "php-codesniffer.md",
-        "php-cs-fixer.md",
+        "php-codesniffer2.md",
+        "php-codesniffer3.md",
+        "php-codesniffer4.md",
         "static-code-analysis.md",
-        "gitignore.md"
+        "gitignore.md",
+        "git-hooks.md",
+        "inline-documentation.md",
+        "audit-whitelist.md"
     ],
     "thank-you.md"
 ]
