@@ -1,10 +1,5 @@
 [
-    "sponsors.md",
     "index.md",
-    [
-        "about-me.md",
-        "emily.md"
-    ],
     [
         "what-is-code-review.md",
         "formal-code-review.md",

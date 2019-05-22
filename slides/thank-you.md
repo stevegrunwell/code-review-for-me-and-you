@@ -1,8 +1,7 @@
 ## Thank you!
+<!-- .element: style="margin-bottom: 1em;" -->
 
 Steve Grunwell<br>
-[stevegrunwell.com](https://stevegrunwell.com)<br>
-[liquidweb.com](https://liquidweb.com)
+Senior Software Engineer, Liquid Web
 
 [stevegrunwell.com/slides/code-review](https://stevegrunwell.com/slides/code-review) <!-- .element: class="slides-link" -->
-[joind.in/talk/f22e0](https://joind.in/talk/f22e0) <!-- .element: class="slides-link" -->
