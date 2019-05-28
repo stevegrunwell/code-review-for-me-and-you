@@ -1,1 +1,1 @@
-<!-- .slide: class="intro-slide" data-state="intro-slide" data-background-image="resources/sponsors.jpg" data-background-position="center center" data-background-size="contain" data-background-color="#000" -->
+<!-- .slide: data-background="resources/sponsors-beer-city-code.png" data-background-size="contain" data-background-position="center center" -->
