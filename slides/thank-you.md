@@ -4,4 +4,4 @@
 Steve Grunwell<br>
 Senior Software Engineer, Liquid Web
 
-[stevegrunwell.com/slides/code-review](https://stevegrunwell.com/slides/code-review) <!-- .element: class="slides-link" -->
+<!-- .element: class="slides-link" -->[stevegrunwell.com/slides/code-review](https://stevegrunwell.com/slides/code-review)<br>[joind.in/talk/bcbbb](https://joind.in/talk/bcbbb)
