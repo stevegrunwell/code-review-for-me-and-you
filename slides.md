@@ -1,5 +1,5 @@
 <!-- .slide: class="title-slide" data-hide-footer -->
-# Code Review: For Me & You
+# Code Review:<br>For Me &amp; You
 
 Steve Grunwell <!-- .element: class="byline" -->
 [@stevegrunwell@phpc.social](https://phpc.social/@stevegrunwell)
@@ -19,9 +19,9 @@ Code review can take a few different forms:
 
 ### Formal code review
 
-* <!-- .element: class="fragment" --> An **official** part of your development workflow
+* <!-- .element: class="fragment" --> An <u>official</u> part of your development workflow
 * <!-- .element: class="fragment" --> Development &rsaquo; Code Review &rsaquo; Merge
-* <!-- .element: class="fragment" --> Pair programming
+* <!-- .element: class="fragment" --> Pair programming?
 * <!-- .element: class="fragment" --> "Bug sweeps"
 
 Note:
@@ -30,7 +30,6 @@ Note:
 * Every (major) change gets reviewed before merge
     - Pair programming? Essentially already doing this!
 * Bug sweeps = larger chunks are reviewed after merging
-
 
 ----
 
@@ -57,11 +56,21 @@ While it may be immediately apparent to some, regular code review carries a lot 
 
 ----
 
-<!-- .slide: data-background="resources/ash-meme.png" data-background-size="contain" data-background-position="center center" -->
+<!-- .slide: data-hide-footer data-background="resources/ash-meme.png" data-background-size="contain" data-background-position="center center" -->
 
 Note:
 
 * Two sets of eyes are better than one!
+
+----
+
+### "Shift Left"
+
+> The earlier you can catch issues, the less expensive they'll be to fix
+
+Note:
+
+A general theme you'll see emerge through this talk is "shift left": move quality checks earlier (or "left") in the project timeline; it's much easier to fix something while it's still on an engineer's laptop than after it's reached production.
 
 ----
 
@@ -91,27 +100,29 @@ Note:
 * Catch duplicate logic/functionality, convoluted data flows, and/or pain points
     - Reimplementing database access logic
     - Core functions already exist to do something
+    - Associative arrays instead of purpose-built objects
     - Reinventing the wheel
 
 ----
 
 ### Reduce the Bus Factor&trade;
 
-> **noun | bəs fak-tər**
->
-> How royally screwed your team would be if the one person who understood this darn app were hit by a bus tomorrow.
+**noun | bəs fak-tər**
+
+_How many folks can you lose<br>before you're utterly screwed?_
 
 Note:
 
-* The cost to your team or company if the one person who understands a codebase gets hit by a bus or otherwise leaves the team.
-* The more people who are at least familiar, the lower the risk.
+* The "bus factor" (see also: "Lottery Factor") is basically the number of key individuals the project depends upon
+* If only two people understand how it all works and they get hit by a bus, win the lottery, retire, or get burned out and quit, that's a bus factor of 2.
+* Mitigate this risk by breaking down these knowledge silos; code review is a great way to build a shared understanding
 
 ----
 
 ### Developer growth
 
 * <!-- .element: class="fragment" --> Great way to help junior developers grow
-* <!-- .element: class="fragment" --> Great way to help **senior** developers grow
+* <!-- .element: class="fragment" --> Great way to help <strong>senior</strong> developers grow
 
 Note:
 
@@ -135,10 +146,10 @@ Note:
 
 ----
 
-### The argument against code review
+### Common arguments<br><u>against</u> code review
 
 * <!-- .element: class="fragment" --> Ain't nobody got time for that!
-* <!-- .element: class="fragment" --> I reviewed it and can confirm that it is, in fact, code.
+* <!-- .element: class="fragment" --> I reviewed it and can confirm that it is,<br>in fact, code.
 * <!-- .element: class="fragment" --> Death by a thousand paper-cuts
 
 Note:
@@ -147,11 +158,11 @@ Note:
     - Larger the review, the more uninterrupted time needed
 * If the code's not earnestly being reviewed, it's a charade and a waste of time
 * Conversely, some people get *too* into reviews, and it becomes nitpicky and unhelpful
-    - That's not how _I_ would have done it!
+    - "That's not how _I_ would have done it!""
 
 ----
 
-> The goal of code review is to — as a team — arrive at the best possible solution to a problem.
+> The goal of code review is to—as a team—arrive at the best possible solution to a problem.
 
 Note:
 
@@ -163,23 +174,22 @@ Remember: the goal of code review isn't to make things perfect, but to put smart
 
 * <!-- .element: class="fragment" --> Make code review an integral part of your team's workflow
 * <!-- .element: class="fragment" --> Empower every member of your team to request a review
-* <!-- .element: class="fragment" --> If it's not important enough to review, it's not important enough to ship
+* <!-- .element: class="fragment" --> If it's not important enough to review, it's not important enough to ship!
 
 Note:
 
 * Best way to ensure code reviews get done is to make them a part of the workflow.
-    - Reviews are not a "sometimes" thing
+    - Reviews are not a "sometimes" thing, they are a required step
 * Everyone should be able to request a review, and should feel empowered to jump into one, too
     - Great learning opportunity, and the more eyes the better
 * No shortcuts; hotfixes mean emergency code reviews, not skipping the process entirely.
 
 ----
 
-<!-- .slide: data-background-image="resources/pacino-godfather.jpg" data-background-size="cover" data-background-position="center top" -->
+<!-- .slide: data-background-image="resources/pacino-godfather.jpg" data-background-size="cover" data-background-position="center top" data-hide-footer -->
 
-> It's not personal,
-> it's strictly business.
-<!-- .element: style="color: #fff; text-shadow: 0 0 8px #000;" -->
+It's not personal,<br>it's strictly business.
+<!-- .element: class="meme-text" -->
 
 Note:
 
@@ -188,7 +198,10 @@ Note:
 
 ----
 
-<!-- .slide: data-background-image="resources/you-dont-own-me.gif" data-background-position="center center" data-background-size="contain" data-background-color="#000" -->
+<!-- .slide: data-background-image="resources/let-it-go.png" data-background-position="center center" data-background-size="cover" data-hide-footer -->
+
+Code Ownership:<br>Let it Go!
+<!-- .element: class="meme-text" -->
 
 Note:
 
@@ -263,7 +276,7 @@ Note:
 * A PR consists of one branch compared to a base branch
     - Branches can also exist across forks on GitHub
 * Typically, branches will be merged into "master" or "develop" (varies by workflow)
-* Review the changes, then click "Create pull request" to get text editor to provide a title + description of the changes
+* Review the changes, then click "Create pull request" to get text editor to provide a descriptive title + description of the changes
 
 ----
 
@@ -338,7 +351,6 @@ Many of the popular code review tools are tied into the repository host itself; 
 
 ## Providing Feedback
 
-
 ----
 
 ### Be Objective, not Subjective
@@ -351,20 +363,22 @@ Note:
 
 * Important to put aside "that's not how I would do it" and instead focus on providing objective feedback
 * Instead of citing "best practices", link to relevant docs
-* If something doesn't make sense, ask the developer why the approached it a certain way
+* If something doesn't make sense, ask the developer _why_ the approached it a certain way
     - Forces the dev to re-evaluate
+    - The most important question you can ask is "WHY?"
 
 ----
 
-**Not so great:**
+👎 **Not so great:**
 
 > If I were you, I'd move this function into the `Widget` class so it's not so hard to find.
+<!-- .element: class="speech-bubble" -->
 
 **Better:** <!-- .element: class="fragment" data-fragment-index="0" -->
 
-> It seems like this function is closely related to the `Widget` class and not used anywhere else — would it make sense to move it into the class, instead?
+> It seems like this function is closely related to the `Widget` class and not used anywhere else—would it make sense to move it into the class, instead?
 
-<!-- .element: class="fragment" data-fragment-index="0" -->
+<!-- .element: class="speech-bubble fragment" data-fragment-index="0" -->
 
 Note:
 
@@ -375,12 +389,12 @@ Note:
 **Not so great:**
 
 > Output should be escaped
+<!-- .element: class="speech-bubble" -->
 
 **Better:** <!-- .element: class="fragment" data-fragment-index="0" -->
 
 > The output of this HTML attribute should be escaped via [`esc_attr()`](https://developer.wordpress.org/reference/functions/esc_attr/).
-
-<!-- .element: class="fragment" data-fragment-index="0" -->
+<!-- .element: class="speech-bubble fragment" data-fragment-index="0" -->
 
 Note:
 
@@ -392,16 +406,14 @@ Note:
 
 ### Highlight Successes
 
-Celebrate the small victories
+Celebrate the small victories!
 
-<blockquote class="fragment">Great catch, a lot of people would have missed that condition!</blockquote>
-
-
-<blockquote class="fragment">Where did you learn about this function? It's super useful!</blockquote>
-
-<blockquote class="fragment">You've really come a long way in your use of caching, well done!</blockquote>
-
-<blockquote class="fragment">This documentation is excellent, thank you!</blockquote>
+<blockquote class="speech-bubble fragment-replace fragment" data-fragment-index="0" style="margin-top: 1em;">
+    <p class="fragment fade-in-then-out" data-fragment-index="0">Great catch, a lot of people would have missed that condition!</p>
+    <p class="fragment fade-in-then-out" data-fragment-index="1">Where did you learn about this function? It's super useful!</p>
+    <p class="fragment fade-in-then-out" data-fragment-index="2">You've really come a long way in your use of caching, well done!</p>
+    <p class="fragment fade-in-then-out" data-fragment-index="3">This documentation is excellent,<br>thank you!</p>
+</blockquote>
 
 Note:
 
@@ -436,10 +448,10 @@ Note:
 ###  Atomic Commits
 
 ```sh
-$ git commit -m "Checking in today's work before happy hour! #YOLO"
+$ git commit -am "#YOLO" && git push --force
 ```
 
-![Krysten Ritter proclaiming "Oh, I just realized. I hate you"](resources/i-hate-you.gif)
+![Krysten Ritter proclaiming "Oh, I just realized. I hate you"](resources/i-hate-you.gif)<!-- .element: class="fragment" -->
 
 Note:
 
@@ -452,15 +464,17 @@ Please don't be the person who does this kind of thing, or you're going to be th
 ###  Atomic PRs
 
 * <!-- .element: class="fragment" --> PRs should be as small + focused as possible
-* <!-- .element: class="fragment" --> Smaller PRs = shorter feedback loop
+* <!-- .element: class="fragment" --> Smaller PRs == shorter feedback loop
+* <!-- .element: class="fragment" --> Avoid CODEOWNERS stampede
 
 Note:
 
 * PRs should be as small as (reasonably) possible
     - Big difference in cognitive load between ten small PRs with a few changes each v. one giant PR
-* Smaller PRs = faster reviews
+* Smaller PRs lead to faster reviews
     - Easier to grab between tasks
     - More likely to get done in a reasonable amount of time
+* If you rely on CODEOWNERS, try to minimize the number of teams that require sign-off
 
 ----
 
@@ -475,37 +489,39 @@ Note:
 * Not uncommon for multiple PRs to build on one another
 * Create "Blocked" tag and mention the blocking PR(s) in the new PR's description.
 
-Fixes #17, blocked by #42 tells my teammate that this PR will fix issue #17, but can't be addressed until we've merged #42.
+"Fixes #17, blocked by #42" tells my teammate that this PR will fix issue #17, but can't be addressed until we've merged #42.
+
+GitHub will automatically resolve issue #17 when this is merged, plus mention this PR on issue #42
 
 ----
 
-### WIP: Work in Progress
+### Draft PRs
 
-* <!-- .element: class="fragment" --> Convention for "this might not be fully-ready for review"
+* <!-- .element: class="fragment" --> Not-ready-for-Primetime
 * <!-- .element: class="fragment" --> Opportunity to have discussions and on-going reviews
 * <!-- .element: class="fragment" --> Keep notes related to a specific branch
 
 Note:
 
-* WIP is a common convention for reviews that have been started but are still under active development
+* Most tools now offer the ability to create draft PRs, but previously the convention was labelling PRs a "WIP"
+* Good for collecting preliminary feedback, ensuring CI passes, etc. without signaling that it's ready for a final review
 * Great for early feedback ("does this approach make sense?")
-* For more complicated branches, can help keep track of changes
+* For more complicated branches (e.g. release prep), can help keep track of changes as you go
 
 ----
 
 ### Coding Standards
 
 * <!-- .element: class="fragment" --> Determine coding standards at the beginning of the project
-    * WordPress v PSR-2 v. PEAR v. ¯\\\_(ツ)_/¯
-* <!-- .element: class="fragment" --> Determine _what_ gets reviewed
-* <!-- .element: class="fragment" --> Above all else, **be consistent!**
+    * PER 2.0 v. PSR-12 v. PEAR v. ¯\\\_(ツ)_/¯
+* <!-- .element: class="fragment" --> Determine <em>what</em> gets reviewed
+* <!-- .element: class="fragment" --> Above all else, <u>be consistent!</u>
 
 Note:
 
 * Helpful to determine standards at the beginning of a project
 * Consistent standards == fewer merge conflicts and a more readable codebase
 * Determine what's a priority in reviews. Security? Performance?
-* Are reviews always required, or only for larger changes?
 
 ----
 
@@ -513,7 +529,7 @@ Note:
 
 * <!-- .element: class="fragment" --> Standard for file encoding, whitespace, line endings, and more
 * <!-- .element: class="fragment" --> Defaults available for most popular standards
-* <!-- .element: class="fragment" --> [editorconfig.org](http://editorconfig.org/)
+* <!-- .element: class="fragment" --> <a href="https://editorconfig.org">editorconfig.org</a>
 
 Note:
 
@@ -528,7 +544,7 @@ Note:
 
 * <!-- .element: class="fragment" --> Automatically check whitespace, formatting, naming schemes, etc.
 * <!-- .element: class="fragment" --> Also great for catching common security + performance issues
-* <!-- .element: class="fragment" --> [eslint.org](https://eslint.org/)
+* <!-- .element: class="fragment" --> <a href="https://eslint.org">eslint.org</a>
 
 Note:
 
@@ -541,7 +557,7 @@ Note:
 ### PHP_CodeSniffer
 
 * <!-- .element: class="fragment" --> Tokenizes and analyzes code against coding standards
-* <!-- .element: class="fragment" --> Standards are defined in `phpcs.xml` or `phpcs.xml.dist`
+* <!-- .element: class="fragment" --> Standards can be endlessly customized, including custom sniffs!
 
 Note:
 
@@ -564,7 +580,37 @@ Note:
 * Great at satisfying the "does it work well?" priority
 * Can be a great addition to a project, but these tools lack the insight to be a full replacement
     - Bus factor also goes up
-* Examples: Code Climate, Codacy, Jetbrains' Upsource
+* Examples: PHPStan, Psalm, Code Climate, Codacy, Jetbrains' Upsource
+
+----
+
+### "Can't AI Do It?"
+
+* <!-- .element: class="fragment" --> "AI" tools can be used to aid in code review, but should not be considered replacements
+* <!-- .element: class="fragment" --> Summarize changes, catch high-level errors
+* <!-- .element: class="fragment" --> <u>You</u> are still responsible for signing-off!
+
+Note:
+
+Not a fan, but we've started using an AI tool (Qodo Merge) on PRs at work
+
+Main purpose is to catch syntax errors and make recommendations, but will likely need to be trained on your codebase.
+
+If you can catch these issues using more-specialized tools (e.g. static code analysis), trust those rather than AI
+
+Most importantly, remember that these tools exist to _help_ with reviews, but you are still accountable for signing off on PRs. Don't make the mistake of thinking that the AI is always right (spoiler alert: it's not), do the work!
+
+----
+
+### Let CI be the "bad guy"
+
+The more quality checks that we can automate, the more time we have focus on the important aspects of code review!
+
+Note:
+
+You may wonder why we just spent a few minutes talking about coding standards and static code analysis, but here's the trick: if we can cover the low-hanging fruit via automated tooling, we have more bandwidth to focus on the business logic when reviewing code.
+
+A strong CI pipeline == easier reviews. Another example of "shift left"
 
 ----
 
@@ -599,6 +645,7 @@ Note:
 
 * Scripts that can be executed throughout Git lifecycle
 * Not stored in the repo by default, but can easily be distributed
+    * Tools like Husky, Lefthook, etc. can handle setting these up automatically
 * Things like automatically running PHP_Codesniffer pre-commit, updating dependencies on git pull, or running tests ahead of a git push
 
 ----
@@ -619,13 +666,13 @@ Note:
 
 ----
 
-### Audit the whitelist
+### Audit your baselines
 
 > If an app isn't working right but all the tests pass, the first place you should look are the areas where test coverage has been ignored.
 
 Note:
 
-* Testing tools, sniffers, etc. usually permit errors to be whitelisted
+* Testing tools, sniffers, etc. usually permit errors to be suppressed
 * Make sure you're periodically auditing these to ensure code isn't just being ignored without reason
 * Easy to get 100% test coverage if you just skip anything that's untested!
 

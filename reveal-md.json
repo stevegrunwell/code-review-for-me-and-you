@@ -10,6 +10,7 @@
     ],
     "absoluteUrl": "https://stevegrunwell.github.io/code-review-for-me-and-you/",
     "revealOptions": {
+        "backgroundTransition": "none",
         "controls": true,
         "controlsTutorial": false,
         "pause": true,

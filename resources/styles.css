@@ -81,6 +81,21 @@
     color: #fff;
 }
 
+/* Fragments that replace the previous value in-place. */
+.fragment-replace {
+    position: relative;
+}
+
+.fragment-replace .fragment {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.fragment-replace .fragment:first-child {
+    position: relative;
+}
+
 /* Blockquotes */
 .reveal blockquote {
     width: 90%;
@@ -100,6 +115,25 @@
 
 .reveal blockquote p:last-child {
     margin-bottom: 0;
+}
+
+.reveal .speech-bubble {
+    font-size: .86em;
+    background: #fff;
+    border-radius: 1em;
+    box-shadow: 0 0 0.1em var(--subdued-text-color);
+}
+
+.reveal .speech-bubble p {
+    right: 0;
+    bottom: 0;
+    display: block;
+    margin: 0;
+    padding: 1em;
+}
+
+.reveal .speech-bubble::before {
+    display: none;
 }
 
 /* Add a bit of extra space between top-level list items. */
@@ -123,12 +157,6 @@ dd + dt {
     margin-top: 1em;
 }
 
-/* Comparison tables */
-.comparison-table th,
-.comparison-table td {
-    max-width: 50%;
-}
-
 /* Add .hide-line-numbers to code blocks in order to hide line numbering. */
 .hide-line-numbers .hljs-ln-numbers {
     display: none;
@@ -144,6 +172,14 @@ dd + dt {
 /* Prevent uppercasing of titles as needed. */
 .no-text-transform {
     text-transform: none;
+}
+
+/* Text meant to appear over a background image. Bigger, bolder, and with a shadow. */
+.meme-text {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 2px #000;
 }
 
 /* Hide text that's hidden for the sake of presentation. */
