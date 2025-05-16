@@ -8,6 +8,14 @@ Attendees will gain deeper insight into some of the arguments for and against sy
 
 :sparkles: **[View slides](http://stevegrunwell.github.io/code-review-for-me-and-you)** :sparkles:
 
+HERE IS MY CAT, ISN'T HE FLUFFY?!
+
+![Taco, a black cat, wearing a witch hat that he totally didn't then proceed to destroy](resources/taco.jpg)
+
+OH, AND WE ADOPTED JOLENE, AND SHE'S A GOOD GIRL!
+
+![Jolene, a black Labrador retriever, looking oh-so happy](resources/jolene.jpg)
+
 ## Presentation History
 
 * [Cascadia PHP 2019](https://2019.cascadiaphp.com/) — September 20, 2019 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/cascadia-php-2019/slides.pdf), [Joind.in](https://joind.in/talk/bcbbb))
