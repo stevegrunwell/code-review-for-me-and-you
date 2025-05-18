@@ -21,7 +21,6 @@ Code review can take a few different forms:
 
 * <!-- .element: class="fragment" --> An <u>official</u> part of your development workflow
 * <!-- .element: class="fragment" --> Development &rsaquo; Code Review &rsaquo; Merge
-* <!-- .element: class="fragment" --> Pair programming?
 * <!-- .element: class="fragment" --> "Bug sweeps"
 
 Note:
@@ -30,6 +29,7 @@ Note:
 * Every (major) change gets reviewed before merge
     - Pair programming? Essentially already doing this!
 * Bug sweeps = larger chunks are reviewed after merging
+    - "post-mortem code review" (better late than never?)
 
 ----
 
@@ -56,6 +56,18 @@ While it may be immediately apparent to some, regular code review carries a lot 
 
 ----
 
+### "Shift Left"
+
+> The earlier you can catch issues, the less expensive they'll be to fix
+
+Note:
+
+* A general theme you'll see emerge through this talk is "shift left"
+    - Corporate speak for "it's easier to fix things when we catch them early than it is after they've hit production"
+* The more we can do to catch these issues early via code review, automated testing, etc. the faster we can resolve issues
+
+----
+
 <!-- .slide: data-hide-footer data-background="resources/ash-meme.png" data-background-size="contain" data-background-position="center center" -->
 
 Note:
@@ -64,44 +76,37 @@ Note:
 
 ----
 
-### "Shift Left"
-
-> The earlier you can catch issues, the less expensive they'll be to fix
-
-Note:
-
-A general theme you'll see emerge through this talk is "shift left": move quality checks earlier (or "left") in the project timeline; it's much easier to fix something while it's still on an engineer's laptop than after it's reached production.
-
-----
-
 ### Catch Bugs
 
 * A second set of eyes on the code
-* <!-- .element: class="fragment" --> Catches the most egregious errors
-    * <!-- .element: class="fragment" --> Easiest to automate away
+* <!-- .element: class="fragment" --> Are assumptions about the requirements correct?
+* <!-- .element: class="fragment" --> Missing corner cases, tests, etc.
+* <!-- .element: class="fragment" --> Are there cleaner ways to do this?
 
 Note:
 
-* Catch egregious errors — semi-colons, unescaped SQL, etc.
-* Low-hanging fruit, also easiest to automate away
-    - More on this later
+* Sometimes it just takes a second person to notice "hey, this function isn't doing what it's supposed to"
+* Catch corner-cases, missing tests, sanitization and escaping issues, etc.
+* General suggestions to improve code quality
+    - Some of this can be automated, more on this later
 
 ----
 
 ### Catch larger architectural issues
 
-* Requires more ramp-up <!-- .element: class="fragment" -->
-* The first line of defense against technical debt <!-- .element: class="fragment" -->
+* <!-- .element: class="fragment" --> Requires more ramp-up
+* <!-- .element: class="fragment" --> The first line of defense against technical debt
 
 Note:
 
-* Requires some familiarity with codebase on part of reviewer
-* Where code review really starts to pay off
-* Catch duplicate logic/functionality, convoluted data flows, and/or pain points
-    - Reimplementing database access logic
-    - Core functions already exist to do something
-    - Associative arrays instead of purpose-built objects
-    - Reinventing the wheel
+* Code review can also help expose larger architectural issues
+* Requires a better understanding of the codebase
+    - Do we already have logic elsewhere to handle this that we're duplicating?
+    - Are we fighting against the framework?
+    - Will this work with production traffic?
+    - Are there security concerns (SQL injection, input sanitization, etc.)?
+    - Are we reinventing the wheel?
+* Code review == your first line of defense against technical debt
 
 ----
 
@@ -156,9 +161,13 @@ Note:
 
 * Good code review takes time
     - Larger the review, the more uninterrupted time needed
+    - Make the time to catch bugs now or let the them ruin your weekend when prod goes down: your choice!
 * If the code's not earnestly being reviewed, it's a charade and a waste of time
+    - Far less-costly to catch bugs before they hit prod, but you do you, I guess?
+    - "We've tried nothing and we're all out of ideas!"
 * Conversely, some people get *too* into reviews, and it becomes nitpicky and unhelpful
-    - "That's not how _I_ would have done it!""
+    - e.g. "That's not how _I_ would have done it!"
+    - This is a people problem, not an issue with code review.
 
 ----
 
@@ -193,8 +202,8 @@ It's not personal,<br>it's strictly business.
 
 Note:
 
-* Code reviews are meant to help you improve this code and grow as a developer
-* As tempted as you may be, don't take — or make — reviews personal
+* Remember that code reviews are meant to help you improve your code and grow as a developer; they are *not* meant to be personal attacks on a developer's skills
+* As tempted as you may be, don't take—or make—reviews personal
 
 ----
 
@@ -205,7 +214,7 @@ Code Ownership:<br>Let it Go!
 
 Note:
 
-* No code ownership!
+* It is not your code, it is the team's code!
 * When you're being reviewed, it's easy to feel attacked
 * Also easy to feel like someone's trying to rewrite your baby
 * Code review is a compromise, moving towards the best possible solution
@@ -254,12 +263,12 @@ Note:
 #### Push your branch
 
 ```sh
-$ git checkout -b fix/my-bugfix
-Switched to a new branch 'fix/my-bugfix'
+$ git checkout -b fix/moar-pet-photos
+Switched to a new branch 'fix/moar-pet-photos'
 
 # Make your changes + commit
 
-$ git push -u origin fix/my-bugfix
+$ git push -u origin fix/moar-pet-photos
 ```
 
 Note:
@@ -269,24 +278,22 @@ Note:
 
 ----
 
-<!-- .slide: data-background-image="resources/asimov-open-pr.jpg" data-background-size="100% auto" data-background-position="center center" data-background-color="#fff" -->
+<!-- .slide: data-background-image="resources/compare-branches.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
 
 Note:
 
 * A PR consists of one branch compared to a base branch
     - Branches can also exist across forks on GitHub
-* Typically, branches will be merged into "master" or "develop" (varies by workflow)
+* Typically, branches will be merged into "main" or "develop" (varies by workflow)
 * Review the changes, then click "Create pull request" to get text editor to provide a descriptive title + description of the changes
 
 ----
 
-<!-- .slide: data-background-image="resources/asimov-17.jpg" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" -->
+<!-- .slide: data-background-image="resources/pr-body.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
 
 Note:
 
-* Here's a PR that's been opened + assigned to me
-    - Prompt at the top
-    - I'm listed under "Reviewers"
+* Here's a PR on GitHub
 * Base and feature branch, and a breakdown of commits
 * Specific files that have changed
 
@@ -296,6 +303,7 @@ Note:
 
 * <!-- .element: class="fragment" --> Run automated test suites
 * <!-- .element: class="fragment" --> Check coding standards
+* <!-- .element: class="fragment" --> Static code analysis
 * <!-- .element: class="fragment" --> Calculate code coverage
 
 Note:
@@ -306,15 +314,7 @@ Note:
 
 ----
 
-<!-- .slide: data-background-image="resources/asimov-17.jpg" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" -->
-
-Note:
-
-* If I click the "Add your review" button...
-
-----
-
-<!-- .slide: data-background-image="resources/asimov-17-submit.jpg" data-background-size="100% auto" data-background-position="center center" data-background-color="#fff" -->
+<!-- .slide: data-background-image="resources/review-changes.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
 
 Note:
 
@@ -324,7 +324,7 @@ Note:
 
 ----
 
-<!-- .slide: data-background-image="resources/asimov-17-comment.jpg" data-background-size="100% auto" data-background-position="center center" data-background-color="#fff" -->
+<!-- .slide: data-background-image="resources/inline-comment.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
 
 Note:
 
@@ -338,14 +338,31 @@ Note:
 
 ### Other popular tools
 
-* Bitbucket
+* Codeberg
+* Gitea
+* GitBucket
 * GitLab
+* AWS CodeCommit
 * Beanstalk
-* Phabricator
+* Bitbucket
+* Crucible
+
+<!-- .element: class="two-column" -->
 
 Note:
 
 Many of the popular code review tools are tied into the repository host itself; Bitbucket, GitLab, and Beanstalk are all competitors to GitHub.
+
+Meanwhile, Codeberg, Gitea, GitBucket, et al are self-hosted alternatives.
+
+----
+
+### Animal break! <!-- .element: class="screen-reader-text" -->
+
+<div class="animal-break">
+    <img src="resources/taco.jpg" alt="Taco, a black cat, wearing a witch hat that he totally didn't then proceed to destroy">
+    <img src="resources/jolene.jpg" alt="Jolene, a black Labrador retriever, looking oh-so happy">
+</div>
 
 ---
 
@@ -363,6 +380,7 @@ Note:
 
 * Important to put aside "that's not how I would do it" and instead focus on providing objective feedback
 * Instead of citing "best practices", link to relevant docs
+    - Gives your feedback authority, while giving the recipient a place to start
 * If something doesn't make sense, ask the developer _why_ the approached it a certain way
     - Forces the dev to re-evaluate
     - The most important question you can ask is "WHY?"
@@ -423,18 +441,121 @@ Note:
 
 ---
 
+## Code Review, minus the "ew"
+
+Note:
+
+I've teased CI as a way to make code reviews easier a couple times, let's dig in!
+
+----
+
+### Let CI be the "bad guy"
+
+The more quality checks that we can automate, the more time we have focus on the important aspects of code review!
+
+Note:
+
+* Big proponent of letting CI be the villain, as it frees reviewers up to focus on the "does it work?" and does it work well?" priorities
+* You set the rules, and CI makes sure everyone follows them
+* Another example of "shift left"
+
+----
+
+### The value of coding standards
+
+* <!-- .element: class="fragment" --> Determine coding standards at the beginning of the project
+    * PER 2.0 v. PSR-12 v. PEAR v. ¯\\\_(ツ)_/¯
+* <!-- .element: class="fragment" --> Reduces merge conflicts, back-and-forth
+* <!-- .element: class="fragment" --> Enforce standards via tooling
+
+Note:
+
+* Coding standards are a way of saying "this is how we write our code"
+    - Tabs vs spaces, class + variable naming conventions, project file structure, etc.
+* Consistent standards => fewer merge conflicts and a more readable codebase
+* Once standards are determined, use tooling to ensure compliance
+
+----
+
+### Linting
+
+* <!-- .element: class="fragment" --> Validate against project coding standards
+    * <!-- .element: class="fragment" --> PHP_CodeSniffer, PHP Coding Standards Fixer
+    * <!-- .element: class="fragment" --> ESLint, Shellcheck, RuboCop, PyLint
+* <!-- .element: class="fragment" --> Highly-configurable, with reasonable defaults
+* <!-- .element: class="fragment" --> Often capable of automatically fixing some issues!
+
+Note:
+
+* We can enforce coding standards with linting tools
+    - In the PHP ecosystem, most popular are PHP_CodeSniffer and PHP Coding Standards Fixer
+    - Similar tools across languages: JavaScript, Bash, Ruby, Python, etc.
+* Generally offer rulesets for common standards, but can be customized for individual teams/projects
+* Helps catch the low-hanging fruit: whitespace, naming schemes, syntax errors, missing documentation, undeclared variables, etc.
+* Many include automated fixing tools (e.g. PHP Code Beautifier), which can fix a lot of common issues automatically
+
+----
+
+### .editorconfig
+
+* <!-- .element: class="fragment" --> Standard for file encoding, whitespace, line endings, and more
+* <!-- .element: class="fragment" --> Defaults available for most popular standards
+* <!-- .element: class="fragment" --> <a href="https://editorconfig.org">editorconfig.org</a>
+
+Note:
+
+* Dotfile supported by most IDEs (sometimes requiring a plugin) that automatically configures the editor for things like file encoding, tabs v spaces, newlines vs carriage returns, etc.
+    - Lives in repository, helps consistency
+* Example files available for most popular standards
+
+----
+
+### Static code analysis
+
+* <!-- .element: class="fragment" --> Examine the code without running it
+* <!-- .element: class="fragment" --> Catch type issues, performance concerns, and more!
+* <!-- .element: class="fragment" --> Great addition to—but not replacement for—code review
+
+Note:
+
+* Often sold as "automated code reviews"
+    - More advanced than tools like ESLint or PHP_CodeSniffer, which are focused more on syntax
+* Detects type issues, logical errors, performance concerns, and a lot more
+    - Most can be extended with additional rulesets
+* Great at assisting with the "does it work well?" priority of code reviews, but tools don't know everything!
+* Examples: PHPStan, Psalm, Code Climate, Codacy
+
+----
+
+### "Can't AI Do It?"
+
+* <!-- .element: class="fragment" --> "AI" tools can be used to <u>assist</u> in code review
+* <!-- .element: class="fragment" --> Summarize changes, catch high-level errors
+* <!-- .element: class="fragment" --> "Overly-confident generalist"
+* <!-- .element: class="fragment" --> <u>You</u> are still responsible for signing-off!
+
+Note:
+
+* Not a fan, but we've started using an AI tool (Qodo Merge) on PRs at work.
+    - To its credit, it does catch a fair amount of issues...that are already being caught by tools like PHPStan
+* Main purpose is to catch syntax errors and make recommendations, but will likely need to be trained on your codebase.
+* If you can catch these issues using more-specialized tools (e.g. static code analysis), trust those rather than AI
+    - be wary of "magic" tools that claim to understand all languages!
+* Most importantly, remember that these tools exist to _help_ with reviews, but you are still accountable for signing off on PRs. Don't make the mistake of thinking that the AI is always right (spoiler alert: it's not), do the work!
+
+---
+
 ## Advice from the Trenches
 
 Note:
 
-Some of the most important things I've learned in my years of doing code review.
-
+To wrap up, I'd like to leave you with some of the most important things I've learned in my years of doing code review.
 
 ----
 
 ### Practice Atomic Commits
 
-* <!-- .element: class="fragment" --> Make each commit as small and focused as possible
+* <!-- .element: class="fragment" --> Make each commit as small & focused as possible
 * <!-- .element: class="fragment" --> Commits are cheap, go wild!
 
 Note:
@@ -463,9 +584,9 @@ Please don't be the person who does this kind of thing, or you're going to be th
 
 ###  Atomic PRs
 
-* <!-- .element: class="fragment" --> PRs should be as small + focused as possible
+* <!-- .element: class="fragment" --> PRs should be as small & focused as possible
 * <!-- .element: class="fragment" --> Smaller PRs == shorter feedback loop
-* <!-- .element: class="fragment" --> Avoid CODEOWNERS stampede
+* <!-- .element: class="fragment" --> Avoid a CODEOWNER stampede
 
 Note:
 
@@ -478,23 +599,6 @@ Note:
 
 ----
 
-### GitHub Tags: Blocked
-
-> This PR introduces X feature.
->
-> Fixes #17, blocked by #42.
-
-Note:
-
-* Not uncommon for multiple PRs to build on one another
-* Create "Blocked" tag and mention the blocking PR(s) in the new PR's description.
-
-"Fixes #17, blocked by #42" tells my teammate that this PR will fix issue #17, but can't be addressed until we've merged #42.
-
-GitHub will automatically resolve issue #17 when this is merged, plus mention this PR on issue #42
-
-----
-
 ### Draft PRs
 
 * <!-- .element: class="fragment" --> Not-ready-for-Primetime
@@ -504,117 +608,27 @@ GitHub will automatically resolve issue #17 when this is merged, plus mention th
 Note:
 
 * Most tools now offer the ability to create draft PRs, but previously the convention was labelling PRs a "WIP"
-* Good for collecting preliminary feedback, ensuring CI passes, etc. without signaling that it's ready for a final review
-* Great for early feedback ("does this approach make sense?")
+* Good for collecting preliminary feedback (e.g. "does this approach make sense"), ensuring CI passes, etc. without signaling that it's ready for a final review
 * For more complicated branches (e.g. release prep), can help keep track of changes as you go
 
 ----
 
-### Coding Standards
+### Issue References
 
-* <!-- .element: class="fragment" --> Determine coding standards at the beginning of the project
-    * PER 2.0 v. PSR-12 v. PEAR v. ¯\\\_(ツ)_/¯
-* <!-- .element: class="fragment" --> Determine <em>what</em> gets reviewed
-* <!-- .element: class="fragment" --> Above all else, <u>be consistent!</u>
-
-Note:
-
-* Helpful to determine standards at the beginning of a project
-* Consistent standards == fewer merge conflicts and a more readable codebase
-* Determine what's a priority in reviews. Security? Performance?
-
-----
-
-### .editorconfig
-
-* <!-- .element: class="fragment" --> Standard for file encoding, whitespace, line endings, and more
-* <!-- .element: class="fragment" --> Defaults available for most popular standards
-* <!-- .element: class="fragment" --> <a href="https://editorconfig.org">editorconfig.org</a>
+> This PR introduces X feature.
+>
+> Fixes #17, blocked by #42.
 
 Note:
 
-* Supported by most editors and IDEs
-* Tells editor how to handle whitespace, indentation, line endings, and more
-* Files available for all popular standards
-* Saves a lot of time with stuff like tabs v. spaces
+* Most platforms will allow you to reference other PRs or issues, which helps provide context
+* Some key words (fixes, closes, etc.) will actually automatically close the referenced issues once the PR is merged
+* It's also not uncommon for PRs to depend on other PRs being merged first
+    - Adopting a convention of "blocked by X" helps teammates see where these dependencies are (even if tools won't automatically block a PR from being merged)
 
 ----
 
-### ESLint
-
-* <!-- .element: class="fragment" --> Automatically check whitespace, formatting, naming schemes, etc.
-* <!-- .element: class="fragment" --> Also great for catching common security + performance issues
-* <!-- .element: class="fragment" --> <a href="https://eslint.org">eslint.org</a>
-
-Note:
-
-* ESLint, JSHint, etc. are great for ensuring consistent JS
-* Define standards — whitespace, formatting, structure, variable + function names, etc. — then automatically check source for violations
-* Also great for catching common issues like undeclared variables, potential security issues, performance bottlenecks, etc.
-
-----
-
-### PHP_CodeSniffer
-
-* <!-- .element: class="fragment" --> Tokenizes and analyzes code against coding standards
-* <!-- .element: class="fragment" --> Standards can be endlessly customized, including custom sniffs!
-
-Note:
-
-PHP_CodeSniffer by Squizz Labs is a great tool for analyzing code.
-
-Catch the easy stuff like whitespace, naming schemes, missing documentation, etc.
-
-----
-
-### Static code analysis
-
-* <!-- .element: class="fragment" --> Examine the code without running it
-* <!-- .element: class="fragment" --> Detect areas that are overly-complex or missing tests
-* <!-- .element: class="fragment" --> Great addition, but not a replacement!
-
-Note:
-
-* Often sold as "automated code reviews"
-* More advanced than tools like ESLint or PHP_CodeSniffer, which check syntax
-* Great at satisfying the "does it work well?" priority
-* Can be a great addition to a project, but these tools lack the insight to be a full replacement
-    - Bus factor also goes up
-* Examples: PHPStan, Psalm, Code Climate, Codacy, Jetbrains' Upsource
-
-----
-
-### "Can't AI Do It?"
-
-* <!-- .element: class="fragment" --> "AI" tools can be used to aid in code review, but should not be considered replacements
-* <!-- .element: class="fragment" --> Summarize changes, catch high-level errors
-* <!-- .element: class="fragment" --> <u>You</u> are still responsible for signing-off!
-
-Note:
-
-Not a fan, but we've started using an AI tool (Qodo Merge) on PRs at work
-
-Main purpose is to catch syntax errors and make recommendations, but will likely need to be trained on your codebase.
-
-If you can catch these issues using more-specialized tools (e.g. static code analysis), trust those rather than AI
-
-Most importantly, remember that these tools exist to _help_ with reviews, but you are still accountable for signing off on PRs. Don't make the mistake of thinking that the AI is always right (spoiler alert: it's not), do the work!
-
-----
-
-### Let CI be the "bad guy"
-
-The more quality checks that we can automate, the more time we have focus on the important aspects of code review!
-
-Note:
-
-You may wonder why we just spent a few minutes talking about coding standards and static code analysis, but here's the trick: if we can cover the low-hanging fruit via automated tooling, we have more bandwidth to focus on the business logic when reviewing code.
-
-A strong CI pipeline == easier reviews. Another example of "shift left"
-
-----
-
-### .gitignore
+### Embrace the .gitignore
 
 A versioned file that excludes files from the repo
 
@@ -639,7 +653,7 @@ Note:
 
 * <!-- .element: class="fragment" --> Enable you to execute scripts throughout the Git lifecycle
 * <!-- .element: class="fragment" --> Not stored within the repo!
-* <!-- .element: class="fragment" --> Analyze code before committing, perform actions ahead of a `git push`
+* <!-- .element: class="fragment" --> Analyze code before committing, perform actions ahead of a <code>git push</code>
 
 Note:
 
@@ -658,23 +672,24 @@ Note:
 
 Note:
 
-* Treat inline documentation as code
-    - If a function's arguments or return value changes, the docs better be updated to match
+* When performing code reviews, be sure to review relevant documentation along with the rest of the code
+    - If a function's arguments or return value changes, the docs better be updated to match!
 * Helps reduce "Doc Rot", when the documentation doesn't match the actual behavior
-* Parameters or return changes and docs don't? Automatic code review failure.
+* If docs aren't being updated with the code, request changes in the PR
     - Do not let bad docs get merged!
 
 ----
 
 ### Audit your baselines
 
-> If an app isn't working right but all the tests pass, the first place you should look are the areas where test coverage has been ignored.
+> If an app isn't working right but all the tests pass, the first place you should look are the areas where test coverage has been ignored!
 
 Note:
 
-* Testing tools, sniffers, etc. usually permit errors to be suppressed
-* Make sure you're periodically auditing these to ensure code isn't just being ignored without reason
-* Easy to get 100% test coverage if you just skip anything that's untested!
+* Most linters, static code analysis tools, etc. will allow errors to be suppressed
+    - Often these suppressions are either inline (via comments) or in a "baseline" file
+* Additionally, certain files can be omitted from code coverage calculations
+* If you're running into bugs but everything that's being checked seems to be working as expected, double check that you're not accidentially suppressing an actual issue!
 
 ---
 
