@@ -698,6 +698,6 @@ Note:
 ## Thank You!
 
 Steve Grunwell<br>
-<span style="font-size: .75em;">Staff Software Engineer, Mailchimp</span>
+<span style="font-size: .75em;">Grunwell Consulting, LLC</span>
 
 [stevegrunwell.com/slides/code-review](https://stevegrunwell.com/slides/code-review)<!-- .element: class="slides-link" -->
