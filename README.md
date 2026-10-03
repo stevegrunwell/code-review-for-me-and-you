@@ -6,7 +6,9 @@ As we peel back the layers, however, we find that the topic of code review is mu
 
 Attendees will gain deeper insight into some of the arguments for and against systemic, peer code review, as well as pick up some useful tools to make code review a natural part of their teams' workflow.
 
-:sparkles: **[View slides](http://stevegrunwell.github.io/code-review-for-me-and-you)** :sparkles:
+✨ **[View slides](http://stevegrunwell.github.io/code-review-for-me-and-you)** ✨
+
+> 👋 If you've enjoyed this talk and are looking to augment and/or level-up your team, [I'm available for consulting work!](https://grunwellconsulting.com)
 
 ## Presentation History
 
