@@ -247,7 +247,7 @@ If we can agree that there's worthwhile value to be had from regular code review
 
 ### GitHub Pull Requests
 
-1. <!-- .element: class="fragment" --> Push new branch
+1. <!-- .element: class="fragment" --> Push your branch
 2. <!-- .element: class="fragment" --> Open a pull request (PR)
 3. <!-- .element: class="fragment" --> (Optional) CI pipeline
 4. <!-- .element: class="fragment" --> Reviewer(s) leave feedback
@@ -280,6 +280,8 @@ Note:
 
 <!-- .slide: data-background-image="resources/compare-branches.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
 
+#### Open a pull request (PR) <!-- .element: class="screen-reader-text" -->
+
 Note:
 
 * A PR consists of one branch compared to a base branch
@@ -299,7 +301,7 @@ Note:
 
 ----
 
-#### 3. (Optional) Execute CI pipeline
+#### (Optional) Execute CI pipeline
 
 * <!-- .element: class="fragment" --> Run automated test suites
 * <!-- .element: class="fragment" --> Check coding standards
@@ -310,11 +312,14 @@ Note:
 
 * This step is optional, but can be a huge time saver!
 * Anything you can do to catch low-hanging fruit here will save you time going back-and-forth
+    - Let CI be the bad guy
     - More on some of these suggestions in a bit!
 
 ----
 
 <!-- .slide: data-background-image="resources/review-changes.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
+
+#### Reviewers leave feedback <!-- .element: class="screen-reader-text" -->
 
 Note:
 
@@ -325,6 +330,8 @@ Note:
 ----
 
 <!-- .slide: data-background-image="resources/inline-comment.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
+
+#### Submitting a review <!-- .element: class="screen-reader-text" -->
 
 Note:
 
