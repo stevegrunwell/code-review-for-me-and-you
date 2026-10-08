@@ -471,7 +471,7 @@ Note:
 ### The value of coding standards
 
 * <!-- .element: class="fragment" --> Determine coding standards at the beginning of the project
-    * PER 2.0 v. PSR-12 v. PEAR v. ¯\\\_(ツ)_/¯
+    * PER 3.0 v. PSR-12 v. PEAR v. ¯\\\_(ツ)_/¯
 * <!-- .element: class="fragment" --> Reduces merge conflicts, back-and-forth
 * <!-- .element: class="fragment" --> Enforce standards via tooling
 
