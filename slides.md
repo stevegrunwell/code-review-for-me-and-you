@@ -92,15 +92,14 @@ Note:
 
 ----
 
-### Catch larger architectural issues
+### Catch larger <br>architectural issues
 
 * <!-- .element: class="fragment" --> Requires more ramp-up
 * <!-- .element: class="fragment" --> The first line of defense against technical debt
 
 Note:
 
-* Code review can also help expose larger architectural issues
-* Requires a better understanding of the codebase
+* Code review can also help expose larger architectural issues, but that requires a better understanding of the codebase
     - Do we already have logic elsewhere to handle this that we're duplicating?
     - Are we fighting against the framework?
     - Will this work with production traffic?
@@ -139,7 +138,7 @@ Note:
 
 ----
 
-#### Who should perform code review?
+#### Who should perform <br>code review?
 
 ![Everyone!!!](resources/everyone.gif)
 
@@ -151,7 +150,7 @@ Note:
 
 ----
 
-### Common arguments<br><u>against</u> code review
+### Common arguments <br><u>against</u> code review
 
 * <!-- .element: class="fragment" --> Ain't nobody got time for that!
 * <!-- .element: class="fragment" --> I reviewed it and can confirm that it is,<br>in fact, code.
@@ -179,7 +178,7 @@ Remember: the goal of code review isn't to make things perfect, but to put smart
 
 ----
 
-### Building a Culture of Code Review
+### Building a culture <br>of code review
 
 * <!-- .element: class="fragment" --> Make code review an integral part of your team's workflow
 * <!-- .element: class="fragment" --> Empower every member of your team to request a review
@@ -364,7 +363,7 @@ Meanwhile, Codeberg, Gitea, GitBucket, et al are self-hosted alternatives.
 
 ----
 
-### Be Objective, not Subjective
+### Be objective, not subjective
 
 * <!-- .element: class="fragment" --> Put aside personal feelings and opinions, and try to provide objective feedback
 * <!-- .element: class="fragment" --> Provide resources (where appropriate)
@@ -416,7 +415,7 @@ Note:
 
 ----
 
-### Highlight Successes
+### Highlight successes
 
 Celebrate the small victories!
 
@@ -435,7 +434,7 @@ Note:
 
 ---
 
-## Code Review, minus the "ew"
+## Code Review,<br>minus the "ew"
 
 Note:
 
@@ -547,7 +546,7 @@ To wrap up, I'd like to leave you with some of the most important things I've le
 
 ----
 
-### Practice Atomic Commits
+### Practice atomic commits
 
 * <!-- .element: class="fragment" --> Make each commit as small & focused as possible
 * <!-- .element: class="fragment" --> Commits are cheap, go wild!
@@ -560,7 +559,7 @@ Note:
 
 ----
 
-###  Atomic Commits
+###  Atomic commits
 
 ```sh
 $ git commit -am "#YOLO" && git push --force
@@ -607,7 +606,7 @@ Note:
 
 ----
 
-### Issue References
+### Issue references
 
 > This PR introduces X feature.
 >
@@ -689,7 +688,7 @@ Note:
 
 <!-- .slide: data-hide-footer -->
 
-## Thank You!
+## Thank you!
 
 Steve Grunwell<br>
 <span style="font-size: .75em;">Grunwell Consulting, LLC</span>
