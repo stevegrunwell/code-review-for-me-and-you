@@ -223,11 +223,30 @@ Prioritize feedback:
 
 ---
 
-## Facilitating Code Reviews
+## Facilitating code reviews
 
 Note:
 
-If we can agree that there's worthwhile value to be had from regular code review, let's walk through what a typical code review looks like:
+If we can agree that there's worthwhile value to be had from regular code review, let's walk through what a typical code review looks like. But first:
+
+----
+
+
+### "Can't AI Do It?"
+
+* <!-- .element: class="fragment" --> "AI" tools can be used to <u>assist</u> in code review
+* <!-- .element: class="fragment" --> Summarize changes, catch high-level errors
+* <!-- .element: class="fragment" --> "Overly-confident generalist"
+* <!-- .element: class="fragment" --> <u>You</u> are still responsible for signing-off!
+
+Note:
+
+* Not a fan, but my last employer started using an AI tool (Qodo Merge) on PRs at work.
+    - To its credit, it does catch a fair amount of issues...that are already being caught by tools like PHPStan
+* Main purpose is to catch syntax errors and make recommendations, but will likely need to be trained on your codebase.
+* If you can catch these issues using more-specialized tools (e.g. static code analysis), trust those rather than AI
+    - be wary of "magic" tools that claim to understand all languages!
+* Most importantly, remember that these tools exist to _help_ with reviews, but you are still accountable for signing off on PRs. Don't make the mistake of thinking that the AI is always right (spoiler alert: it's not), do the work!
 
 ----
 
@@ -518,27 +537,9 @@ Note:
 * Great at assisting with the "does it work well?" priority of code reviews, but tools don't know everything!
 * Examples: PHPStan, Psalm, Code Climate, Codacy
 
-----
-
-### "Can't AI Do It?"
-
-* <!-- .element: class="fragment" --> "AI" tools can be used to <u>assist</u> in code review
-* <!-- .element: class="fragment" --> Summarize changes, catch high-level errors
-* <!-- .element: class="fragment" --> "Overly-confident generalist"
-* <!-- .element: class="fragment" --> <u>You</u> are still responsible for signing-off!
-
-Note:
-
-* Not a fan, but we've started using an AI tool (Qodo Merge) on PRs at work.
-    - To its credit, it does catch a fair amount of issues...that are already being caught by tools like PHPStan
-* Main purpose is to catch syntax errors and make recommendations, but will likely need to be trained on your codebase.
-* If you can catch these issues using more-specialized tools (e.g. static code analysis), trust those rather than AI
-    - be wary of "magic" tools that claim to understand all languages!
-* Most importantly, remember that these tools exist to _help_ with reviews, but you are still accountable for signing off on PRs. Don't make the mistake of thinking that the AI is always right (spoiler alert: it's not), do the work!
-
 ---
 
-## Advice from the Trenches
+## Advice from the trenches
 
 Note:
 
