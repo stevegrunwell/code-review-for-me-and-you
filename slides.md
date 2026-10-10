@@ -204,24 +204,11 @@ Note:
 
 * Remember that code reviews are meant to help you improve your code and grow as a developer; they are *not* meant to be personal attacks on a developer's skills
 * As tempted as you may be, don't take—or make—reviews personal
-
-----
-
-<!-- .slide: data-background-image="resources/let-it-go.png" data-background-position="center center" data-background-size="cover" data-hide-footer -->
-
-Code Ownership:<br>Let it Go!
-<!-- .element: class="meme-text" -->
-
-Note:
-
-* It is not your code, it is the team's code!
-* When you're being reviewed, it's easy to feel attacked
-* Also easy to feel like someone's trying to rewrite your baby
 * Code review is a compromise, moving towards the best possible solution
 
 ----
 
-### Code Review Priorities
+### Code review priorities
 
 1. <!-- .element: class="fragment" --> Does it work?
 2. <!-- .element: class="fragment" --> Does it work well?
