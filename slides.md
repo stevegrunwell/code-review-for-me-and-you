@@ -120,6 +120,7 @@ Note:
 * The "bus factor" (see also: "Lottery Factor") is basically the number of key individuals the project depends upon
 * If only two people understand how it all works and they get hit by a bus, win the lottery, retire, or get burned out and quit, that's a bus factor of 2.
 * Mitigate this risk by breaking down these knowledge silos; code review is a great way to build a shared understanding
+* Reviews leave a log of past decisions—why did the last developer implement it this way?
 
 ----
 
@@ -162,8 +163,7 @@ Note:
     - Larger the review, the more uninterrupted time needed
     - Make the time to catch bugs now or let the them ruin your weekend when prod goes down: your choice!
 * If the code's not earnestly being reviewed, it's a charade and a waste of time
-    - Far less-costly to catch bugs before they hit prod, but you do you, I guess?
-    - "We've tried nothing and we're all out of ideas!"
+    - Far less-costly to catch bugs before they hit prod
 * Conversely, some people get *too* into reviews, and it becomes nitpicky and unhelpful
     - e.g. "That's not how _I_ would have done it!"
     - This is a people problem, not an issue with code review.
@@ -360,7 +360,7 @@ Note:
 
 ### Other popular tools
 
-* Codeberg
+* Codeberg/Forgejo
 * Gitea
 * GitBucket
 * GitLab
@@ -373,9 +373,9 @@ Note:
 
 Note:
 
-Many of the popular code review tools are tied into the repository host itself; Bitbucket, GitLab, and Beanstalk are all competitors to GitHub.
+Many of the popular code review tools are tied into the repository host itself; Codeberg, Bitbucket, and GitLab are all competitors to GitHub.
 
-Meanwhile, Codeberg, Gitea, GitBucket, et al are self-hosted alternatives.
+Meanwhile, Forgejo (which powers Codeberg), Gitea, GitBucket, et al are self-hosted alternatives.
 
 ----
 
@@ -403,7 +403,7 @@ Note:
 * Important to put aside "that's not how I would do it" and instead focus on providing objective feedback
 * Instead of citing "best practices", link to relevant docs
     - Gives your feedback authority, while giving the recipient a place to start
-* If something doesn't make sense, ask the developer _why_ the approached it a certain way
+* If something doesn't make sense, ask the developer _why_ they approached it a particular way
     - Forces the dev to re-evaluate
     - The most important question you can ask is "WHY?"
 
