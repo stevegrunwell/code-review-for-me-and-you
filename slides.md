@@ -218,7 +218,7 @@ Note:
 Prioritize feedback:
 
 1. Does the code do what it's designed to do, and/or does it break anything else?
-2. Are there potential security/performance issues (escaping, sanitization, etc.)
+2. Are there potential security/performance issues (escaping, sanitization, OWASP, etc.)
 3. Does it adhere to the coding standards and other rules?
 
 ---
@@ -629,6 +629,19 @@ Note:
 * Some key words (fixes, closes, etc.) will actually automatically close the referenced issues once the PR is merged
 * It's also not uncommon for PRs to depend on other PRs being merged first
     - Adopting a convention of "blocked by X" helps teammates see where these dependencies are (even if tools won't automatically block a PR from being merged)
+
+----
+
+### Self-reviews
+
+* <!-- .element: class="fragment" --> Make a habit of being your own first reviewer
+* <!-- .element: class="fragment" --> Add comments to explain decisions, answer questions before they're asked
+
+Note:
+
+* When you open PRs, it's a good habit to review the changes yourself
+    - Not looking for approvals, but ensuring that your PR make sense, all the right changes are included, etc.
+* For non-trivial changes, don't be afraid to leave your own inline comments to explain why decisions were made, alternative approaches tried, or link to resources that helped guide your process
 
 ----
 
