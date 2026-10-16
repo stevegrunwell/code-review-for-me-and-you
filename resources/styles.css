@@ -42,6 +42,10 @@
     font-size: .86em;
 }
 
+.slides-link + .slides-link {
+    margin-top: 0;
+}
+
 /* Persistent footer */
 .presentation-footer {
     --presentation-footer-color: var(--subdued-text-color);

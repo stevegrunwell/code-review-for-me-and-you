@@ -116,15 +116,14 @@ Note:
 
 ----
 
-### Catch larger architectural issues
+### Catch larger <br>architectural issues
 
 * <!-- .element: class="fragment" --> Requires more ramp-up
 * <!-- .element: class="fragment" --> The first line of defense against technical debt
 
 Note:
 
-* Code review can also help expose larger architectural issues
-* Requires a better understanding of the codebase
+* Code review can also help expose larger architectural issues, but that requires a better understanding of the codebase
     - Do we already have logic elsewhere to handle this that we're duplicating?
     - Are we fighting against the framework?
     - Will this work with production traffic?
@@ -145,6 +144,7 @@ Note:
 * The "bus factor" (see also: "Lottery Factor") is basically the number of key individuals the project depends upon
 * If only two people understand how it all works and they get hit by a bus, win the lottery, retire, or get burned out and quit, that's a bus factor of 2.
 * Mitigate this risk by breaking down these knowledge silos; code review is a great way to build a shared understanding
+* Reviews leave a log of past decisions—why did the last developer implement it this way?
 
 ----
 
@@ -163,7 +163,7 @@ Note:
 
 ----
 
-#### Who should perform code review?
+#### Who should perform <br>code review?
 
 ![Everyone!!!](resources/everyone.gif)
 
@@ -175,7 +175,7 @@ Note:
 
 ----
 
-### Common arguments<br><u>against</u> code review
+### Common arguments <br><u>against</u> code review
 
 * <!-- .element: class="fragment" --> Ain't nobody got time for that!
 * <!-- .element: class="fragment" --> I reviewed it and can confirm that it is,<br>in fact, code.
@@ -187,8 +187,7 @@ Note:
     - Larger the review, the more uninterrupted time needed
     - Make the time to catch bugs now or let the them ruin your weekend when prod goes down: your choice!
 * If the code's not earnestly being reviewed, it's a charade and a waste of time
-    - Far less-costly to catch bugs before they hit prod, but you do you, I guess?
-    - "We've tried nothing and we're all out of ideas!"
+    - Far less-costly to catch bugs before they hit prod
 * Conversely, some people get *too* into reviews, and it becomes nitpicky and unhelpful
     - e.g. "That's not how _I_ would have done it!"
     - This is a people problem, not an issue with code review.
@@ -203,7 +202,7 @@ Remember: the goal of code review isn't to make things perfect, but to put smart
 
 ----
 
-### Building a Culture of Code Review
+### Building a culture <br>of code review
 
 * <!-- .element: class="fragment" --> Make code review an integral part of your team's workflow
 * <!-- .element: class="fragment" --> Empower every member of your team to request a review
@@ -228,24 +227,11 @@ Note:
 
 * Remember that code reviews are meant to help you improve your code and grow as a developer; they are *not* meant to be personal attacks on a developer's skills
 * As tempted as you may be, don't take—or make—reviews personal
-
-----
-
-<!-- .slide: data-background-image="resources/let-it-go.png" data-background-position="center center" data-background-size="cover" data-hide-footer -->
-
-Code Ownership:<br>Let it Go!
-<!-- .element: class="meme-text" -->
-
-Note:
-
-* It is not your code, it is the team's code!
-* When you're being reviewed, it's easy to feel attacked
-* Also easy to feel like someone's trying to rewrite your baby
 * Code review is a compromise, moving towards the best possible solution
 
 ----
 
-### Code Review Priorities
+### Code review priorities
 
 1. <!-- .element: class="fragment" --> Does it work?
 2. <!-- .element: class="fragment" --> Does it work well?
@@ -256,22 +242,51 @@ Note:
 Prioritize feedback:
 
 1. Does the code do what it's designed to do, and/or does it break anything else?
-2. Are there potential security/performance issues (escaping, sanitization, etc.)
+2. Are there potential security/performance issues (escaping, sanitization, OWASP, etc.)
 3. Does it adhere to the coding standards and other rules?
 
 ---
 
-## Facilitating Code Reviews
+## Facilitating code reviews
 
 Note:
 
-If we can agree that there's worthwhile value to be had from regular code review, let's walk through what a typical code review looks like:
+If we can agree that there's worthwhile value to be had from regular code review, let's walk through what a typical code review looks like. But first, the elephant in the room:
+
+----
+
+### Code review in the age of AI <!-- .element: class="screen-reader-text" -->
+
+![Homer Simpson asking the question "Can't AI do it?"](resources/cant-ai-do-it.gif)
+
+Note:
+
+* I'm not personally a fan of AI for *anything*, but a lot of companies have started relying on LLMs to both write and review code
+* Last company went hard on Qodo Merge, which often just parroted what tools like PHPStan was already telling us, with frequent false-positives
+* Strongly disagree with this practice, as the end result is that developers lose all sense of how the code works
+
+----
+
+#### "Can't AI Do It?"
+
+* <!-- .element: class="fragment" --> "AI" tools can be used to <u>assist</u> in code review
+* <!-- .element: class="fragment" --> Summarize changes, catch high-level errors
+* <!-- .element: class="fragment" --> "Overly-confident generalist"
+* <!-- .element: class="fragment" --> <u>You</u> are still responsible for signing-off!
+
+Note:
+
+* If you **must** use AI for code review, think of them like you would an unpaid intern: limited context and not being paid enough to care about accuracy
+* Can be helpful for summarizing changes, but writing a good PR description should be the responsibility of the developer who is requesting the change
+* If you can catch these issues using more-specialized tools (e.g. static code analysis), trust those rather than AI
+    - be wary of "magic" tools that claim to understand all languages!
+* Most importantly, remember that these tools exist to _help_ with reviews, but you are still accountable for signing off on PRs. Don't make the mistake of thinking that the AI is always right (spoiler alert: it's not), do the work!
 
 ----
 
 ### GitHub Pull Requests
 
-1. <!-- .element: class="fragment" --> Push new branch
+1. <!-- .element: class="fragment" --> Push your branch
 2. <!-- .element: class="fragment" --> Open a pull request (PR)
 3. <!-- .element: class="fragment" --> (Optional) CI pipeline
 4. <!-- .element: class="fragment" --> Reviewer(s) leave feedback
@@ -304,6 +319,8 @@ Note:
 
 <!-- .slide: data-background-image="resources/compare-branches.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
 
+#### Open a pull request (PR) <!-- .element: class="screen-reader-text" -->
+
 Note:
 
 * A PR consists of one branch compared to a base branch
@@ -323,7 +340,7 @@ Note:
 
 ----
 
-#### 3. (Optional) Execute CI pipeline
+#### (Optional) Execute CI pipeline
 
 * <!-- .element: class="fragment" --> Run automated test suites
 * <!-- .element: class="fragment" --> Check coding standards
@@ -334,11 +351,14 @@ Note:
 
 * This step is optional, but can be a huge time saver!
 * Anything you can do to catch low-hanging fruit here will save you time going back-and-forth
+    - Let CI be the bad guy
     - More on some of these suggestions in a bit!
 
 ----
 
 <!-- .slide: data-background-image="resources/review-changes.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
+
+#### Reviewers leave feedback <!-- .element: class="screen-reader-text" -->
 
 Note:
 
@@ -349,6 +369,8 @@ Note:
 ----
 
 <!-- .slide: data-background-image="resources/inline-comment.png" data-background-size="100% auto" data-background-position="center top" data-background-color="#fff" data-hide-footer -->
+
+#### Submitting a review <!-- .element: class="screen-reader-text" -->
 
 Note:
 
@@ -362,7 +384,7 @@ Note:
 
 ### Other popular tools
 
-* Codeberg
+* Codeberg/Forgejo
 * Gitea
 * GitBucket
 * GitLab
@@ -375,9 +397,9 @@ Note:
 
 Note:
 
-Many of the popular code review tools are tied into the repository host itself; Bitbucket, GitLab, and Beanstalk are all competitors to GitHub.
+Many of the popular code review tools are tied into the repository host itself; Codeberg, Bitbucket, and GitLab are all competitors to GitHub.
 
-Meanwhile, Codeberg, Gitea, GitBucket, et al are self-hosted alternatives.
+Meanwhile, Forgejo (which powers Codeberg), Gitea, GitBucket, et al are self-hosted alternatives.
 
 ----
 
@@ -394,7 +416,7 @@ Meanwhile, Codeberg, Gitea, GitBucket, et al are self-hosted alternatives.
 
 ----
 
-### Be Objective, not Subjective
+### Be objective, not subjective
 
 * <!-- .element: class="fragment" --> Put aside personal feelings and opinions, and try to provide objective feedback
 * <!-- .element: class="fragment" --> Provide resources (where appropriate)
@@ -405,7 +427,7 @@ Note:
 * Important to put aside "that's not how I would do it" and instead focus on providing objective feedback
 * Instead of citing "best practices", link to relevant docs
     - Gives your feedback authority, while giving the recipient a place to start
-* If something doesn't make sense, ask the developer _why_ the approached it a certain way
+* If something doesn't make sense, ask the developer _why_ they approached it a particular way
     - Forces the dev to re-evaluate
     - The most important question you can ask is "WHY?"
 
@@ -446,7 +468,7 @@ Note:
 
 ----
 
-### Highlight Successes
+### Highlight successes
 
 Celebrate the small victories!
 
@@ -465,7 +487,7 @@ Note:
 
 ---
 
-## Code Review, minus the "ew"
+## Code Review,<br>minus the "ew"
 
 Note:
 
@@ -488,7 +510,7 @@ Note:
 ### The value of coding standards
 
 * <!-- .element: class="fragment" --> Determine coding standards at the beginning of the project
-    * PER 2.0 v. PSR-12 v. PEAR v. ¯\\\_(ツ)_/¯
+    * PER 3.0 v. PSR-12 v. PEAR v. ¯\\\_(ツ)_/¯
 * <!-- .element: class="fragment" --> Reduces merge conflicts, back-and-forth
 * <!-- .element: class="fragment" --> Enforce standards via tooling
 
@@ -549,27 +571,9 @@ Note:
 * Great at assisting with the "does it work well?" priority of code reviews, but tools don't know everything!
 * Examples: PHPStan, Psalm, Code Climate, Codacy
 
-----
-
-### "Can't AI Do It?"
-
-* <!-- .element: class="fragment" --> "AI" tools can be used to <u>assist</u> in code review
-* <!-- .element: class="fragment" --> Summarize changes, catch high-level errors
-* <!-- .element: class="fragment" --> "Overly-confident generalist"
-* <!-- .element: class="fragment" --> <u>You</u> are still responsible for signing-off!
-
-Note:
-
-* Not a fan, but we've started using an AI tool (Qodo Merge) on PRs at work.
-    - To its credit, it does catch a fair amount of issues...that are already being caught by tools like PHPStan
-* Main purpose is to catch syntax errors and make recommendations, but will likely need to be trained on your codebase.
-* If you can catch these issues using more-specialized tools (e.g. static code analysis), trust those rather than AI
-    - be wary of "magic" tools that claim to understand all languages!
-* Most importantly, remember that these tools exist to _help_ with reviews, but you are still accountable for signing off on PRs. Don't make the mistake of thinking that the AI is always right (spoiler alert: it's not), do the work!
-
 ---
 
-## Advice from the Trenches
+## Advice from the trenches
 
 Note:
 
@@ -577,7 +581,7 @@ To wrap up, I'd like to leave you with some of the most important things I've le
 
 ----
 
-### Practice Atomic Commits
+### Practice atomic commits
 
 * <!-- .element: class="fragment" --> Make each commit as small & focused as possible
 * <!-- .element: class="fragment" --> Commits are cheap, go wild!
@@ -590,7 +594,7 @@ Note:
 
 ----
 
-###  Atomic Commits
+###  Atomic commits
 
 ```sh
 $ git commit -am "#YOLO" && git push --force
@@ -637,7 +641,7 @@ Note:
 
 ----
 
-### Issue References
+### Issue references
 
 > This PR introduces X feature.
 >
@@ -649,6 +653,19 @@ Note:
 * Some key words (fixes, closes, etc.) will actually automatically close the referenced issues once the PR is merged
 * It's also not uncommon for PRs to depend on other PRs being merged first
     - Adopting a convention of "blocked by X" helps teammates see where these dependencies are (even if tools won't automatically block a PR from being merged)
+
+----
+
+### Self-reviews
+
+* <!-- .element: class="fragment" --> Make a habit of being your own first reviewer
+* <!-- .element: class="fragment" --> Add comments to explain decisions, answer questions before they're asked
+
+Note:
+
+* When you open PRs, it's a good habit to review the changes yourself
+    - Not looking for approvals, but ensuring that your PR make sense, all the right changes are included, etc.
+* For non-trivial changes, don't be afraid to leave your own inline comments to explain why decisions were made, alternative approaches tried, or link to resources that helped guide your process
 
 ----
 
@@ -719,12 +736,13 @@ Note:
 
 <!-- .slide: data-hide-footer -->
 
-## Thank You!
+## Thank you!
 
 Steve Grunwell<br>
-<span style="font-size: .75em;">Staff Software Engineer, Mailchimp</span>
+<span style="font-size: .75em;">Grunwell Consulting, LLC</span>
 
 [stevegrunwell.com/slides/code-review](https://stevegrunwell.com/slides/code-review)<!-- .element: class="slides-link" -->
+[grunwellconsulting.com](https://grunwellconsulting.com)<!-- .element: class="slides-link" -->
 
           </textarea>
         </section>
