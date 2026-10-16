@@ -12,7 +12,7 @@ Attendees will gain deeper insight into some of the arguments for and against sy
 
 ## Presentation History
 
-* [Longhorn PHP 2026](https://longhornphp.com/) — October 16, 2026 ([Joind.in](https://joind.in/event/longhorn-php-2026/code-review-for-me-and-you))
+* [Longhorn PHP 2026](https://longhornphp.com/) — October 16, 2026 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/longhorn-php-2026/slides.pdf), [Joind.in](https://joind.in/event/longhorn-php-2026/code-review-for-me-and-you))
 * [PHP Tek 2025](https://phptek.io/) — May 22, 2025 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/php-tek-2025/slides.pdf), [Joind.in](https://joind.in/talk/02c73))
 * [Cascadia PHP 2019](https://2019.cascadiaphp.com/) — September 20, 2019 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/cascadia-php-2019/slides.pdf), [Joind.in](https://joind.in/talk/bcbbb))
 * [Beer City Code 2019](https://beercitycode.com/) — June 1, 2019 ([PDF](https://github.com/stevegrunwell/code-review-for-me-and-you/releases/download/beer-city-code/slides.pdf))
