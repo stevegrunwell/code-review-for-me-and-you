@@ -699,7 +699,7 @@ Note:
 
 ### Audit your baselines
 
-> If an app isn't working right but all the tests pass, the first place you should look are the areas where test coverage has been ignored!
+> If an app isn't working right but all the tests pass, the first places you should look are the areas where test coverage has been ignored!
 
 Note:
 
